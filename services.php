@@ -1747,8 +1747,8 @@ footer{
     <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <p style="font-size:12px;color:rgba(255,255,255,0.25);">© 2026 Market Open Media. All rights reserved.</p>
       <div style="display:flex;gap:24px;">
-        <a href="#" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy Policy</a>
-        <a href="#" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Terms of Service</a>
+        <a href="privacy.html" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy Policy</a>
+        <a href="terms.html" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Terms of Service</a>
       </div>
     </div>
 

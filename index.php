@@ -1505,11 +1505,11 @@ h1{
       <div>
         <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:18px;">Industries</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:11px;">
-          <li><a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Tree Services</a></li>
-          <li><a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">HVAC</a></li>
-          <li><a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Plumbing</a></li>
-          <li><a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Roofing</a></li>
-          <li><a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Electrical</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Tree Services</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">HVAC</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Plumbing</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Roofing</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Electrical</a></li>
         </ul>
       </div>
 
@@ -1543,8 +1543,8 @@ h1{
     <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <p style="font-size:12px;color:rgba(255,255,255,0.25);">© 2026 Market Open Media. All rights reserved.</p>
       <div style="display:flex;gap:24px;">
-        <a href="#" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy Policy</a>
-        <a href="#" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Terms of Service</a>
+        <a href="privacy.html" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy Policy</a>
+        <a href="terms.html" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Terms of Service</a>
       </div>
     </div>
 
