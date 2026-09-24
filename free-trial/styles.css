@@ -218,6 +218,7 @@ a { color: inherit; text-decoration: none; }
   .hero-top { margin-bottom: 8px; }
   .hero { padding: 24px 0 40px; }
   .hero-video { margin-bottom: 24px; }
+  .video-embed { aspect-ratio: 9/16; }
 }
 .nowrap { white-space: nowrap; }
 
@@ -816,3 +817,36 @@ a { color: inherit; text-decoration: none; }
 }
 .mobile-drawer.open { display: flex; }
 .mobile-drawer a { color: var(--light); }
+
+/* --- Mobile alignment & harmony fixes --- */
+@media (max-width: 640px) {
+  .section { padding: 56px 0; }
+  .wrap { padding: 0 18px; }
+  .section-head h2 { font-size: clamp(22px, 6vw, 32px); }
+  .section-head { margin-bottom: 32px; }
+  .trust-bullets li { align-items: center; gap: 8px; font-size: 14px; }
+  .trust-bullets svg { margin-top: 0; flex-shrink: 0; }
+  .compare-card li { align-items: center; gap: 8px; font-size: 14px; }
+  .compare-card.bad svg,
+  .compare-card.good svg { margin-top: 0; }
+  .compare-card { padding: 22px 18px; }
+  .compare-card h3 { font-size: 15px; }
+  .step-card { padding: 24px 20px; }
+  .step-num { width: 36px; height: 36px; font-size: 14px; margin-bottom: 14px; }
+  .step-card h3 { font-size: 17px; }
+  .stat-bar { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 36px; }
+  .stat { padding: 16px 8px; }
+  .stat .num { font-size: clamp(20px, 5vw, 26px); }
+  .stat .label { font-size: 10px; }
+  .checklist li { align-items: flex-start; gap: 12px; padding: 14px 16px; }
+  .checklist .box { margin-top: 2px; width: 24px; height: 24px; flex-shrink: 0; }
+  .checklist strong { font-size: 14.5px; }
+  .checklist span { font-size: 13px; }
+  .qualify-card { padding: 28px 22px; }
+  .grid-visual-row { gap: 20px; }
+  .ranking-grid { max-width: 280px; }
+  .case-card { padding: 20px 18px; }
+  .faq-q { font-size: 14.5px; padding: 16px 18px; }
+  .footer-cols { flex-direction: column; gap: 20px; }
+  .footer-bottom { flex-direction: column; gap: 10px; }
+}
