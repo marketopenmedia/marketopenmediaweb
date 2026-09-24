@@ -1700,7 +1700,7 @@ footer{
         <ul style="list-style:none;display:flex;flex-direction:column;gap:11px;">
           <li><a href="services.php" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Google Maps SEO</a></li>
           <li><a href="services.php" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Google LSA Management</a></li>
-          <li><a href="index.php#results" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Case Studies</a></li>
+          <li><a href="case-studies.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Case Studies</a></li>
           <li><a href="index.php#why" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Why Us</a></li>
         </ul>
       </div>
