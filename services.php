@@ -1709,10 +1709,10 @@ footer{
       <div>
         <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:18px;">Industries</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:11px;">
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.48);">Tree Services</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.48);">HVAC</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.48);">Plumbing</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.48);">Roofing</li>
+          <li><a href="tree-service.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Tree Services</a></li>
+          <li><a href="hvac.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">HVAC</a></li>
+          <li><a href="plumbing.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Plumbing</a></li>
+          <li><a href="roofing.html" style="font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.48)'">Roofing</a></li>
           <li style="font-size:13.5px;color:rgba(255,255,255,0.48);">Electrical</li>
         </ul>
       </div>
