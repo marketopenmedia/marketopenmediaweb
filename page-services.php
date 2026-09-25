@@ -1502,7 +1502,7 @@ footer{
   <div class="section-header fade">
     <p class="section-label">Why Market Open Media</p>
     <h2>Built Different<span class="dot">.</span></h2>
-    <p>We're not an agency that juggles dozens of clients in your market.<br>We're your dedicated growth partner.</p>
+    <p>We're a boutique agency, not a factory. We're not an agency that juggles dozens of clients in your market.<br>We're your dedicated growth partner with a personalized approach to every client.</p>
   </div>
   <div class="why-grid">
     <div class="why-left fade d1">
@@ -1520,6 +1520,7 @@ footer{
         <li><div class="why-chk"><svg viewBox="0 0 12 12" fill="none" stroke="#0b72ff" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>Lead dispute help to protect your ad spend</li>
         <li><div class="why-chk"><svg viewBox="0 0 12 12" fill="none" stroke="#0b72ff" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>Simple, measurable strategy with clear reporting</li>
         <li><div class="why-chk"><svg viewBox="0 0 12 12" fill="none" stroke="#0b72ff" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>We focus on calls, leads, and booked jobs</li>
+        <li><div class="why-chk"><svg viewBox="0 0 12 12" fill="none" stroke="#0b72ff" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>Boutique agency — personalized, hands-on service for every client</li>
       </ul>
     </div>
   </div>
