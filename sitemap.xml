@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://marketopenmedia.com/blog.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://marketopenmedia.com/free-trial/</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>

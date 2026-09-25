@@ -1219,6 +1219,7 @@ footer{
     <a href="#" class="active">Services</a>
     <a href="#">Results</a>
     <a href="#">About</a>
+    <a href="blog.html">Blog</a>
     <a href="https://calendly.com/marketopenmedia/googlemapsseo" class="btn-nav" target="_blank" rel="noopener">Book a Call</a>
   </nav>
 </header>
