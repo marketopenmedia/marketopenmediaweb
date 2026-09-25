@@ -1075,7 +1075,7 @@ h1{
         <div style="font-size:12.5px;color:rgba(255,255,255,0.50);line-height:1.5;">of local searches convert to a sale</div>
       </div>
       <div style="text-align:center;padding:0 24px;">
-        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#2D6AFF;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;">4,000+</div>
+        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#2D6AFF;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;">50</div>
         <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Businesses Trust Us</div>
         <div style="font-size:12.5px;color:rgba(255,255,255,0.50);line-height:1.5;">tree services, HVAC, plumbing &amp; more growing with Market Open Media</div>
       </div>
