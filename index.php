@@ -876,6 +876,7 @@ h1{
     <a href="services.php">Services</a>
     <a href="#results">Results</a>
     <a href="#about">About</a>
+    <a href="blog.html">Blog</a>
 
     <a href="<?php echo htmlspecialchars($calendly_url); ?>" class="btn-nav" target="_blank" rel="noopener">
       Book a Call

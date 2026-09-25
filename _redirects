@@ -1,0 +1,4 @@
+# Consolidate duplicate homepage variants onto the canonical https://marketopenmedia.com/
+/index.php            /   301
+/market-open-media     /   301
+/market-open-media.html /  301
