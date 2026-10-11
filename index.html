@@ -926,31 +926,24 @@ h1{
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <div class="page">
 
 <!-- ══════════════════════ HEADER ══════════════════════ -->
-<header class="header">
-  <a href="/" class="logo" aria-label="Market Open Media">
-    <img src="https://res.cloudinary.com/dvblqyb4g/image/upload/v1781132748/copy_of_chatgpt_image_jun_10_2026_at_12_47_08_pm_tu2gmz.png" alt="Market Open Media" style="height:60px;width:auto;display:block;">
-  </a>
-
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-
-  <nav class="nav" id="nav">
-    <a href="/services">Services</a>
-    <a href="#results">Results</a>
-    <a href="#about">About</a>
-    <a href="#faq">FAQ</a>
-
-    <a href="/blog">Blog</a>
-
-    <a href="https://calendly.com/marketopenmedia/googlemapsseo" class="btn-nav" target="_blank" rel="noopener">
-      Book a Call
-    </a>
+<header class="sh">
+  <a href="/" class="sh-logo" aria-label="Market Open Media"><img src="https://res.cloudinary.com/dvblqyb4g/image/upload/v1781132748/copy_of_chatgpt_image_jun_10_2026_at_12_47_08_pm_tu2gmz.png" alt="Market Open Media"></a>
+  <button class="sh-burger" id="shBurger" aria-label="Open menu" aria-expanded="false" aria-controls="shNav"><span></span><span></span><span></span></button>
+  <nav class="sh-nav" id="shNav" aria-label="Main">
+    <a href="/" data-page="/">Home</a>
+    <a href="/services" data-page="services">Services</a>
+    <a href="/google-maps-seo" data-page="google-maps-seo">Google Maps SEO</a>
+    <a href="/google-local-services-ads" data-page="google-local-services-ads">Google LSA</a>
+    <a href="/case-studies" data-page="case-studies">Case Studies</a>
+    <a href="/blog" data-page="blog">Blog</a>
+    <a href="/about" data-page="about">About</a>
+    <a href="https://calendly.com/marketopenmedia/googlemapsseo" class="sh-btn" target="_blank" rel="noopener">Book a Call</a>
   </nav>
 </header>
 
@@ -1696,39 +1689,6 @@ h1{
 </footer>
 
 <script>
-(function(){
-  var burger = document.getElementById('burger');
-  var nav    = document.getElementById('nav');
-  var open   = false;
-  function openMenu(){
-    open=true; nav.classList.add('open');
-    burger.setAttribute('aria-expanded','true');
-    burger.setAttribute('aria-label','Close menu');
-    var b=burger.querySelectorAll('span');
-    b[0].style.transform='rotate(45deg) translate(4.5px,4.5px)';
-    b[1].style.opacity='0';
-    b[2].style.transform='rotate(-45deg) translate(4.5px,-4.5px)';
-    document.body.style.overflow='hidden';
-  }
-  function closeMenu(){
-    open=false; nav.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
-    burger.setAttribute('aria-label','Open menu');
-    var b=burger.querySelectorAll('span');
-    b[0].style.transform=b[1].style.opacity=b[2].style.transform='';
-    document.body.style.overflow='';
-  }
-  burger.addEventListener('click',function(){ open?closeMenu():openMenu(); });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){ if(open)closeMenu(); });
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&open) closeMenu();
-  });
-  document.addEventListener('click',function(e){
-    if(open&&!burger.contains(e.target)&&!nav.contains(e.target)) closeMenu();
-  });
-})();
 
 // ── Why Us carousel ──────────────────────────────
 (function(){
@@ -1773,5 +1733,6 @@ document.addEventListener('click', function(e){
   }
 });
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>

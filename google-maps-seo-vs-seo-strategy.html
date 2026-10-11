@@ -103,20 +103,22 @@ footer p{color:rgba(255,255,255,0.35);font-size:13px;}
   main{padding:16px 20px 64px;} table{font-size:13px;} th,td{padding:9px 8px;}
 }
 </style>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 
-<header class="header">
-  <a href="/" aria-label="Market Open Media">
-    <img src="https://res.cloudinary.com/dvblqyb4g/image/upload/v1781132748/copy_of_chatgpt_image_jun_10_2026_at_12_47_08_pm_tu2gmz.png" alt="Market Open Media" style="height:48px;width:auto;display:block;">
-  </a>
-  <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/services">Services</a>
-    <a href="/google-maps-seo">Google Maps SEO</a>
-    <a href="/google-local-services-ads">Google LSA</a>
-    <a href="/blog">Blog</a>
-    <a href="https://calendly.com/marketopenmedia/googlemapsseo" class="btn-nav" target="_blank" rel="noopener">Book a Call</a>
+<header class="sh">
+  <a href="/" class="sh-logo" aria-label="Market Open Media"><img src="https://res.cloudinary.com/dvblqyb4g/image/upload/v1781132748/copy_of_chatgpt_image_jun_10_2026_at_12_47_08_pm_tu2gmz.png" alt="Market Open Media"></a>
+  <button class="sh-burger" id="shBurger" aria-label="Open menu" aria-expanded="false" aria-controls="shNav"><span></span><span></span><span></span></button>
+  <nav class="sh-nav" id="shNav" aria-label="Main">
+    <a href="/" data-page="/">Home</a>
+    <a href="/services" data-page="services">Services</a>
+    <a href="/google-maps-seo" data-page="google-maps-seo">Google Maps SEO</a>
+    <a href="/google-local-services-ads" data-page="google-local-services-ads">Google LSA</a>
+    <a href="/case-studies" data-page="case-studies">Case Studies</a>
+    <a href="/blog" data-page="blog">Blog</a>
+    <a href="/about" data-page="about">About</a>
+    <a href="https://calendly.com/marketopenmedia/googlemapsseo" class="sh-btn" target="_blank" rel="noopener">Book a Call</a>
   </nav>
 </header>
 
@@ -226,5 +228,6 @@ footer p{color:rgba(255,255,255,0.35);font-size:13px;}
   <p>© 2026 Market Open Media. All rights reserved. · <a href="/privacy" style="color:rgba(255,255,255,0.5);">Privacy Policy</a> · <a href="/terms" style="color:rgba(255,255,255,0.5);">Terms of Service</a></p>
 </footer>
 
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
