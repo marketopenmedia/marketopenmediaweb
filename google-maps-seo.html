@@ -1311,6 +1311,16 @@ footer{
   footer div[style*="grid-template-columns:2fr 1fr 1fr 1fr"] > div:first-child{grid-column:auto !important}
   footer div[style*="justify-content:space-between"]{flex-direction:column !important;align-items:flex-start !important;gap:12px !important}
 }
+
+/* Mobile: centered icons */
+@media(max-width:860px){
+  .why-left{text-align:center}
+  .why-left img{display:block;margin-left:auto;margin-right:auto}
+}
+@media(max-width:480px){
+  .industry-item{border-bottom:1px solid var(--line) !important}
+  .industry-item:nth-child(5),.industry-item:nth-child(6){border-bottom:none !important}
+}
 </style>
 
 <div class="page">

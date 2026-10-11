@@ -852,6 +852,20 @@ h1{
     gap:20px !important;
   }
 }
+
+/* Mobile: centered icons + eyebrow fit */
+@media(max-width:768px){
+  .hero-content{padding-right:24px !important}
+  .hero-sub{padding-right:0 !important}
+  .eyebrow{border-radius:22px;padding:9px 16px 9px 12px;max-width:100%}
+  .eyebrow-text{line-height:1.4;letter-spacing:.11em}
+  .hero-content > div[style*="display:flex;align-items:center;flex-wrap:wrap"] > div{justify-content:center !important}
+}
+@media(max-width:480px){
+  div[style*="max-width:960px"] > div{align-items:center !important;text-align:center !important}
+  div[style*="max-width:960px"] > div > p:first-of-type,
+  div[style*="max-width:960px"] > div > p:last-of-type{text-align:center !important}
+}
 </style>
 <script type="application/ld+json">
 {
