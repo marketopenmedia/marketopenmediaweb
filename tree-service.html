@@ -1266,6 +1266,19 @@ footer{
   .industry-item:nth-child(2){border-bottom:1px solid var(--line);}
   footer{padding:24px 18px;}
 }
+
+/* Footer: responsive */
+@media(max-width:900px){
+  footer{padding:48px 24px 28px !important}
+  footer div[style*="grid-template-columns:2fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr !important;gap:32px !important}
+  footer div[style*="grid-template-columns:2fr 1fr 1fr 1fr"] > div:first-child{grid-column:1 / -1 !important}
+}
+@media(max-width:480px){
+  footer{padding:40px 18px 24px !important}
+  footer div[style*="grid-template-columns:2fr 1fr 1fr 1fr"]{grid-template-columns:1fr !important;gap:28px !important}
+  footer div[style*="grid-template-columns:2fr 1fr 1fr 1fr"] > div:first-child{grid-column:auto !important}
+  footer div[style*="justify-content:space-between"]{flex-direction:column !important;align-items:flex-start !important;gap:12px !important}
+}
 </style>
 
 <div class="page">
