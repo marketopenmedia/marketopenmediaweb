@@ -256,3 +256,16 @@ body.mom-services .svc-icon-img .mi-svc-line-icon{
 body.mom-services .svc-icon-img .mi-svc-line-icon *{fill:none!important;stroke:inherit!important}
 body.mom-services .svc-icon-img{display:flex!important;align-items:center!important;justify-content:center!important}
 body.mom-services .mi-subheading-h2 {font-size:clamp(35px,3.6vw,51px)!important;letter-spacing:-.05em!important;line-height:1.11!important}
+
+/* Readability fixes: dark text on light surfaces */
+body.mom-inner #faq h3{color:var(--p3-ink,#121d3d)!important}
+body.mom-inner .step-desc,
+body.mom-inner .section-header p,
+body.mom-inner .page > section:not(.main-hero):not(#faq) > p:not([class]),
+body.mom-inner .page > div > .section-header + * p.how-bar-sub{color:#5d6d87}
+body.mom-inner .how-card p,body.mom-inner .why-grid p{color:#5d6d87}
+body.mom-inner .page > :not(.main-hero){--muted:#5d6d87}
+body.mom-inner .page > :not(.main-hero) .section-label{color:#2f6bb3}
+body.mom-inner footer a[style*="background:var(--blue)"]{color:#fff!important}
+body.mom-inner .page > section:not(.main-hero):not(#faq) h2{color:var(--p3-ink,#121d3d)!important}
+body.mom-inner footer a[style*="background:var(--blue)"]{opacity:1!important}
