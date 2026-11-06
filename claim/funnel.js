@@ -34,9 +34,10 @@
        GoHighLevel workflow that used to send Schedule no longer sees bookings). The booked-call campaign
        optimises on Schedule. Lead and server CAPI stay off. */
     pagePixel: true,
-    /* One conversion only: Schedule, from a booking. The page fires PageView (landing-page views + audiences)
-       and Schedule; no Lead, no QuizDq, no server CAPI. */
-    pageConversions: false,
+    /* The page fires PageView (landing-page views + audiences), Schedule (a booking, the one conversion the
+       campaign optimises on) and, since 2026-11-06, the custom event QuizDq on a quiz hard stop
+       (reason gbp | site) so a "do not send" audience can be built. No Lead (no form), no server CAPI. */
+    pageConversions: true,
 
     /* Booking: Miguel's Calendly event (15 minutes, outbound call, one required question: company name).
        The page watches Calendly's postMessage and sends the visitor to /booked. */
