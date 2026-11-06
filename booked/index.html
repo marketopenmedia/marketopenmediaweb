@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're booked | Market Open Media</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#040C1B">
+<link rel="icon" href="/claim/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/claim/assets/site.css">
+<script src="/claim/funnel.js"></script>
+<style>
+  .bk{padding:40px 0 80px;text-align:center}
+  .bk h1{margin:0 auto;max-width:18ch}
+  .bk .sub{margin-left:auto;margin-right:auto}
+  .bk-film{width:min(100%,calc(62svh * .8));margin:22px auto 0}
+  .bk-film video{display:block;width:100%;aspect-ratio:4/5;border-radius:var(--r2);background:#000}
+  .prep{max-width:720px;margin:34px auto 0;padding:0;text-align:left;display:grid;gap:12px;counter-reset:p}
+  .prep li{list-style:none;position:relative;padding:18px 18px 18px 62px;border:1px solid var(--line2);border-radius:var(--r);background:var(--bg2);counter-increment:p}
+  .prep li::before{content:counter(p);position:absolute;left:18px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--acc);display:grid;place-items:center;font:800 14px/1 var(--disp)}
+  .prep b{display:block;font:700 17px/1.2 var(--disp);margin-bottom:4px}
+  .prep span{color:var(--tx2)}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap bar-in"><a class="logo" href="/"><img class="logo-img" src="/claim/assets/logo.png" alt="Market Open Media" width="73" height="34"></a></div></header>
+<main class="wrap bk">
+  <div class="done-ok" aria-hidden="true"></div>
+  <p class="eyebrow">You're booked</p>
+  <h1>Your free trial setup is on the calendar.</h1>
+  <p class="sub">On the call we show you your grid: where you show up on Google Maps across your area, and where the calls are going instead.</p>
+  <div class="bk-film" id="bkfilm" hidden><video id="bkv" playsinline controls preload="metadata"></video></div>
+  <ol class="prep">
+    <li><b>Your Google Business Profile name</b><span>Exactly how it shows up on Google Maps.</span></li>
+    <li><b>Your service area</b><span>The towns you want the calls from.</span></li>
+    <li><b>A few minutes at a screen</b><span>You'll want to see the grid, so a laptop beats a phone.</span></li>
+  </ol>
+</main>
+<script>
+(function () {
+  var F = window.FUNNEL, sid = null, qs = new URLSearchParams(location.search);
+  var TEST = qs.get('t') === '1';
+  try { sid = localStorage.getItem('mom_sid'); } catch (e) {}
+  if (F.booked && F.booked.live && F.booked.film) {
+    document.getElementById('bkfilm').hidden = false;
+    var v = document.getElementById('bkv'); v.src = F.booked.film; if (F.booked.poster) v.poster = F.booked.poster;
+  }
+  if (TEST) return;
+  /* GHL redirect lands here even when the page's own listener missed the booking: mark it booked on
+     our side only. No pixel, no Schedule: the Schedule robot reads Miguel's calendar and is the only sender. */
+  if (sid) fetch('/api/booked', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sid: sid }), keepalive: true }).catch(function () {});
+})();
+</script>
+</body>
+</html>
