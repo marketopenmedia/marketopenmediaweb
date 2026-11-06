@@ -327,59 +327,12 @@
   function finishQuiz() {
     ev('q_done');
     setBar(TOTAL, 'Done');
-    renderForm();
-  }
-
-  function renderForm() {
-    ev('form');
-    var p = pane(
-      '<p class="q-step">You qualify for the free 7-day trial</p>' +
-      '<h2 class="q-h">Where should we set up your free trial?</h2>' +
-      '<p class="q-sub">Then pick a 15-minute setup time. No card, no contract.</p>' +
-      '<div class="chips"><span class="chip">Trucks: <b>' + esc(label('trucks')) + '</b></span><span class="chip">Website: <b>' + esc(label('site')) + '</b></span></div>' +
-      '<form class="form" id="lf" novalidate>' +
-      '<div class="row2"><div class="fld" data-f="first_name"><label for="fn">First name</label><input id="fn" autocomplete="given-name" required value="' + esc(person.first_name) + '"><div class="err"></div></div>' +
-      '<div class="fld" data-f="company"><label for="co">Company name</label><input id="co" autocomplete="organization" required value="' + esc(person.company) + '"><div class="err"></div></div></div>' +
-      '<div class="fld" data-f="email"><label for="em">Email</label><input id="em" type="email" autocomplete="email" required value="' + esc(person.email) + '"><div class="err"></div></div>' +
-      '<div class="fld" data-f="phone"><label for="ph">Mobile</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" required value="' + esc(person.phone) + '"><div class="err"></div></div>' +
-      '<button class="btn btn-xl" id="lsub" type="submit">' + ctaWords() + ' <span class="arr">&rarr;</span></button>' +
-      '<p class="lock">&#128274; Only Market Open Media sees this. No spam.</p>' +
-      '</form>'
-    );
-    $('#lf', p).addEventListener('submit', function (e) {
-      e.preventDefault();
-      person = { first_name: $('#fn').value.trim(), company: $('#co').value.trim(), email: $('#em').value.trim(), phone: $('#ph').value.trim() };
-      clearErrs();
-      var miss = ['first_name', 'company', 'email', 'phone'].filter(function (k) { return !person[k]; });
-      if (miss.length) return miss.forEach(function (k) { fieldErr(k, 'Fill this in.'); });
-      var b = $('#lsub'); b.disabled = true; b.textContent = 'One sec...';
-      submitLead(b);
-    });
-  }
-  function clearErrs() { $$('.fld').forEach(function (f) { f.classList.remove('bad'); $('.err', f).textContent = ''; }); }
-  function fieldErr(k, msg) { var f = $('.fld[data-f="' + k + '"]'); if (!f) f = $('.fld[data-f="phone"]'); if (f) { f.classList.add('bad'); $('.err', f).textContent = msg; } }
-
-  function submitLead(btn) {
-    var data = { dry: TEST, sid: sid, arm: arm, answers: answers, first_name: person.first_name, company: person.company, email: person.email, phone: person.phone, started_at: startedAt };
-    UTM_KEYS.forEach(function (k) { if (utm[k]) data[k] = utm[k]; });
-    post('/api/lead', data).then(function (j) {
-      if (btn) { btn.disabled = false; btn.innerHTML = ctaWords() + ' <span class="arr">&rarr;</span>'; }
-      if (j._status === 422) return fieldErr(j.field || 'phone', j.reason || 'Check this and try again.');
-      /* Anything else (200, CRM down, network) still goes to the calendar: never lose the booking. */
-      person.done = true;
-      scheduleId = j.scheduleId || F.scheduleId(null, sid);
-      try { sessionStorage.setItem('mom_sched', scheduleId); } catch (e) {}
-      if (j.qualified !== false) px('Lead', { content_name: 'hvac-map-check' }, 'lead-' + sid);
-      renderCalendar();
-    });
+    person.done = true;
+    renderCalendar();
   }
 
   function calUrl() {
     var u = new URL(F.calendar.url);
-    /* Calendly prefill: name, email, a1 = the event's "name of your company" question, location = the phone to call */
-    u.searchParams.set('name', person.first_name || ''); u.searchParams.set('first_name', person.first_name || '');
-    u.searchParams.set('email', person.email || ''); u.searchParams.set('a1', person.company || '');
-    if (person.phone) u.searchParams.set('location', person.phone);
     u.searchParams.set('embed_domain', location.hostname); u.searchParams.set('embed_type', 'Inline'); u.searchParams.set('hide_gdpr_banner', '1');
     /* the ad's own utm rides into the booking so the booked call keeps its source (fbclid is not a Calendly field) */
     UTM_KEYS.forEach(function (k) { if (k !== 'fbclid' && utm[k]) u.searchParams.set(k, utm[k]); });
@@ -396,7 +349,7 @@
       : (F.preview ? '<div class="cal-ph" id="calph">Preview: the calendar connects here (' + esc(F.calendar.owner) + ', ' + esc(F.calendar.hours) + ', ' + F.calendar.minutes + ' minutes).' +
           (TEST ? '<br><button class="btn btn-sm" id="testbook" style="margin-top:14px">Test booking</button>' : '') + '</div>' : '');
     var p = pane(
-      '<p class="q-step">You\'re in, ' + esc(person.first_name || 'friend') + '</p>' +
+      '<p class="q-step">You qualify for the free 7-day trial</p>' +
       '<h2 class="q-h">Pick a time to set up your free trial</h2>' +
       '<ul class="agenda"><li>We show you your map: where you show up on Google Maps, and which shops get the calls instead</li><li>We set up your free 7-day trial on the call</li><li>No card, no contract. Your map review is yours to keep</li></ul>' +
       cal
