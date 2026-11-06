@@ -60,7 +60,7 @@
   /* ---------- Meta pixel: only once the dataset is confirmed as Miguel's (funnel.js pixelVerified) ---------- */
   function px(name, data, eventId) {
     if (TEST || !window.fbq) return;
-    if (F.pageConversions === false && name !== 'PageView') return; /* only the GHL calendar converts (Josh 11/6) */
+    if (F.pageConversions === false && name !== 'PageView' && name !== 'Schedule') return; /* only a booking converts */
     try { eventId ? window.fbq('track', name, data || {}, { eventID: eventId }) : window.fbq('track', name, data || {}); } catch (e) {}
   }
   if (F.pixel && F.pixelVerified && F.pagePixel !== false && !TEST) {
@@ -376,9 +376,13 @@
 
   function calUrl() {
     var u = new URL(F.calendar.url);
-    u.searchParams.set('first_name', person.first_name || ''); u.searchParams.set('email', person.email || ''); u.searchParams.set('phone', person.phone || '');
-    /* the ad's own utm + fbclid ride into the booking so Miguel's contact keeps the click (the Schedule robot reads it) */
-    UTM_KEYS.forEach(function (k) { if (utm[k]) u.searchParams.set(k, utm[k]); });
+    /* Calendly prefill: name, email, a1 = the event's "name of your company" question, location = the phone to call */
+    u.searchParams.set('name', person.first_name || ''); u.searchParams.set('first_name', person.first_name || '');
+    u.searchParams.set('email', person.email || ''); u.searchParams.set('a1', person.company || '');
+    if (person.phone) u.searchParams.set('location', person.phone);
+    u.searchParams.set('embed_domain', location.hostname); u.searchParams.set('embed_type', 'Inline'); u.searchParams.set('hide_gdpr_banner', '1');
+    /* the ad's own utm rides into the booking so the booked call keeps its source (fbclid is not a Calendly field) */
+    UTM_KEYS.forEach(function (k) { if (k !== 'fbclid' && utm[k]) u.searchParams.set(k, utm[k]); });
     if (!utm.utm_source) u.searchParams.set('utm_source', 'mom-funnel');
     u.searchParams.set('utm_term', 'vsl-' + (arm || 'x'));
     return u.toString();
@@ -401,22 +405,18 @@
   }
 
   /* ---------- booking detection ----------
-     GHL's widget postMessages the parent when a booking lands; match on the words. The server
-     dedupes (one booked per lead) and returns the ONE schedule id the pixel and CAPI share. */
+     Calendly's widget postMessages the parent ("calendly.event_scheduled") the moment a booking lands. */
   var bookedOnce = false;
   addEventListener('message', function (e) {
-    if (bookedOnce || !/leadconnector|msgsndr|gohighlevel/i.test(e.origin || '')) return;
-    var s = ''; try { s = typeof e.data === 'string' ? e.data : JSON.stringify(e.data); } catch (x) { return; }
-    if (/book|schedul|appointment|event/i.test(s) && /success|complete|confirm|scheduled|created|booked/i.test(s)) markBooked('message');
+    if (bookedOnce || !/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/i.test(e.origin || '')) return;
+    if (e.data && e.data.event === 'calendly.event_scheduled') markBooked('calendly');
   });
   function markBooked(src) {
     if (bookedOnce) return; bookedOnce = true;
     var go = function () { location.href = '/booked?from=' + encodeURIComponent(src) + (TEST ? '&t=1' : ''); };
     if (TEST) return go();
-    post('/api/booked', { sid: sid }).then(function (j) {
-      /* the page sends no booking event to Meta: the Schedule robot reads Miguel's calendar and is the only sender (2026-10-15) */
-      setTimeout(go, 700);
-    });
+    px('Schedule', { content_name: 'hvac-map-check' }, F.scheduleId(null, sid));
+    post('/api/booked', { sid: sid }).then(function () { setTimeout(go, 700); });
   }
   renderInline();
   if (qs.get('quiz') === '1') openQuiz('link');

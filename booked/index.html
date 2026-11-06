@@ -48,8 +48,8 @@
     var v = document.getElementById('bkv'); v.src = F.booked.film; if (F.booked.poster) v.poster = F.booked.poster;
   }
   if (TEST) return;
-  /* GHL redirect lands here even when the page's own listener missed the booking: mark it booked on
-     our side only. No pixel, no Schedule: the Schedule robot reads Miguel's calendar and is the only sender. */
+  /* Arriving here without the funnel page's own listener (a direct visit or a redirect from the calendar):
+     mark it booked on our side only. The Schedule pixel event is sent from the funnel page, not here. */
   if (sid) fetch('/api/booked', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sid: sid }), keepalive: true }).catch(function () {});
 })();
 </script>

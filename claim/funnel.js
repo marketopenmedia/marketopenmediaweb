@@ -30,18 +30,17 @@
        env MOM_CAPI_TOKEN is set (Events Manager > this dataset > Conversions API token). */
     pixel: '243877356528505',
     pixelVerified: true,
-    /* The page fires PageView + Lead (form submit) on the pixel. It never fires Schedule: a booked call
-       reaches Meta as Schedule from ONE place outside the page (a GHL workflow on calendar
-       5GA9IFhFkZnXPZpAy5tb), so one booking is one Schedule. The booked-call campaign optimises on that. */
+    /* The page fires PageView on the pixel, and Schedule once when Calendly reports a booking (the old
+       GoHighLevel workflow that used to send Schedule no longer sees bookings). The booked-call campaign
+       optimises on Schedule. Lead and server CAPI stay off. */
     pagePixel: true,
-    /* Josh 2026-11-06: "make sure it's only converting from the GHL calendar since we are transferring
-       everything over". The page fires PageView ONLY (landing-page views + audiences). No Lead, no QuizDq,
-       no server CAPI. The one conversion is Schedule, sent from a booking on calendar 5GA9IFhFkZnXPZpAy5tb. */
+    /* One conversion only: Schedule, from a booking. The page fires PageView (landing-page views + audiences)
+       and Schedule; no Lead, no QuizDq, no server CAPI. */
     pageConversions: false,
 
-    /* Booking: Miguel, Mon to Fri, Eastern, 15 minutes. Calendar 5GA9IFhFkZnXPZpAy5tb in Miguel's own GHL
-       (location ZEoHCPW7vgJTpWYQHmtb), built 2026-10-15: no pixel, redirects to /booked. */
-    calendar: { kind: 'ghl', url: 'https://api.leadconnectorhq.com/widget/booking/5GA9IFhFkZnXPZpAy5tb', owner: 'Miguel', hours: 'Mon to Fri, Eastern', minutes: 15 },
+    /* Booking: Miguel's Calendly event (15 minutes, outbound call, one required question: company name).
+       The page watches Calendly's postMessage and sends the visitor to /booked. */
+    calendar: { kind: 'calendly', url: 'https://calendly.com/marketopenmedia/googlemapsseo', owner: 'Miguel', hours: 'Mon to Fri, Eastern', minutes: 15 },
 
     /* 2026-11-06 (Miguel 11/5: one campaign, one page, booked calls). Version B "Claim your neighborhood" is the only page that
        ever booked (1 of 128 views; A 0/53, C 0/198, D 0/14). It is the only live version; the rest point their old links here. */
