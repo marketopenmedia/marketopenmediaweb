@@ -95,17 +95,28 @@ src="https://www.facebook.com/tr?id=243877356528505&amp;ev=PageView&amp;noscript
     </div>
 
     <div class="hero-video">
-      <div class="video-embed" id="videoPlaceholder">
+      <!-- data-mobile: put the vertical (9:16) video's embed URL here and phones will use it; empty = phones use the desktop video -->
+      <div class="video-embed" id="videoPlaceholder"
+           data-desktop="https://www.youtube-nocookie.com/embed/HMBBRfTH3mI?rel=0&amp;playsinline=1&amp;color=white"
+           data-mobile="">
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube-nocookie.com/embed/cKshosEd7j4?rel=0&playsinline=1&color=white"
-          title="How the Free 7-Day Trial Works"
+          title="Rank on Google in 7 days"
           frameborder="0"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
           style="display:block;width:100%;height:100%;border:0;">
         </iframe>
+        <noscript><iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/HMBBRfTH3mI?rel=0&amp;playsinline=1&amp;color=white" title="Rank on Google in 7 days" frameborder="0" allowfullscreen style="display:block;width:100%;height:100%;border:0;"></iframe></noscript>
+        <script>
+          (function () {
+            var box = document.getElementById("videoPlaceholder"), frame = box.querySelector("iframe");
+            var mobile = box.getAttribute("data-mobile"), phone = !!mobile && window.matchMedia("(max-width: 480px)").matches;
+            frame.src = phone ? mobile : box.getAttribute("data-desktop");
+            box.classList.toggle("vertical", phone);
+          })();
+        </script>
       </div>
       <div class="testi-byline" style="margin-top:14px;">
         <strong>Miguel Murillo</strong>

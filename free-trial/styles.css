@@ -218,7 +218,7 @@ a { color: inherit; text-decoration: none; }
   .hero-top { margin-bottom: 8px; }
   .hero { padding: 24px 0 40px; }
   .hero-video { margin-bottom: 24px; }
-  .video-embed { aspect-ratio: 9/16; }
+  .video-embed.vertical { aspect-ratio: 9/16; }
 }
 .nowrap { white-space: nowrap; }
 
